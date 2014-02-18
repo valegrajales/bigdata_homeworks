@@ -1,0 +1,15 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index()
+GET     /crawling                   controllers.Application.crawlingZone(rootURL: String ?= "http://www.uniandes.edu.co/institucional/facultades/listado-de-departamentos/", numberOfCrawlers: Integer ?= 1, maxDepthOfCrawling: Integer ?= 20, politenessDelay: Integer ?= 1000, maxPagesToFetch: Integer ?= 1000)
+GET     /crawlingWs                 controllers.Application.crawlingWs(rootURL: String ?= "http://www.uniandes.edu.co/institucional/facultades/listado-de-departamentos/", numberOfCrawlers: Integer ?= 1, maxDepthOfCrawling: Integer ?= 20, politenessDelay: Integer ?= 1000, maxPagesToFetch: Integer ?= 1000)
+GET     /crawlingWsTeacher          controllers.Application.crawlingWsTeacher(rootURL: String ?= "http://www.uniandes.edu.co/institucional/facultades/listado-de-departamentos/", numberOfCrawlers: Integer ?= 1, maxDepthOfCrawling: Integer ?= 20, politenessDelay: Integer ?= 1000, maxPagesToFetch: Integer ?= 1000)
+GET     /pingWs                     controllers.Application.pingWs()
+GET     /assets/javascripts/ping.js controllers.Application.pingJs()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+GET     /webjars/*file              controllers.WebJarAssets.at(file)

@@ -1,0 +1,123 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+.bs-docs-nav .navbar-brand, .bs-docs-nav .navbar-nav>li>a {
+  color: #563d7c;
+}
+
+.bs-docs-header{
+  color: whitesmoke;
+  background-color: #115B90;
+  background-image: -webkit-linear-gradient(top,#563d7c 0,#115B90 100%);
+  background-image: linear-gradient(to bottom,#003A7D 0,#115B90 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#563d7c', endColorstr='#6F5499', GradientType=0);
+  padding-bottom: 30px;
+  margin-bottom: 0px;
+}
+
+.font-success {
+  color: #47a447;
+}
+.font-information {
+  color: #285e8e;
+}
+.font-danger{
+  color: #d2322d;
+}
+
+#main-nav-bg {
+  width: 251px;
+  position: absolute;
+  float: left;
+  border-right: 1px solid #dddddd;
+  background: #f8f8f8;
+  display: block;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+}
+#main-nav {
+  width: 250px;
+  position: absolute;
+  left: 0;
+  top: 56px;
+}
+#main-nav .navigation {
+  width: 100%;
+}
+#main-nav .navigation > .nav {
+  border-bottom: 1px solid #e7e7e7;
+  background: #f8f8f8;
+}
+.nav-stacked > li {
+  float: none;
+}
+
+#content {
+  margin-left: 251px;
+  background: #fbfbfb;
+  min-width: 276px;
+  background: #fbfbfb;
+}
+.container {
+  max-width: 100% !important;
+}
+
+#main-nav .navigation > .nav > li > .nav {
+  border-right: 1px solid transparent;
+  background: #e5e5e5;
+  border-bottom: 1px solid white;
+  display: none;
+}
+
+#main-nav  ul
+{
+  margin-top: 0;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  display: block;
+  list-style-type: disc;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 70px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  color: #3c3c3c;
+  text-shadow: 1px 1px 1px #ececec;
+}
+
+
+#main-nav  a
+{
+  display: block;
+  color: #585858;
+  background-color: #f4f4f4;
+  padding: 10px;
+  text-decoration: none;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+#main-nav  a:hover
+{
+  background-color: lightgray;
+  color: #585858;
+}
+
+.hidden
+{
+  display: none;
+}

@@ -1,0 +1,92 @@
+@(rootURL: String)(numberOfCrawlers: Integer)(maxDepthOfCrawling: Integer)(politenessDelay: Integer)(maxPagesToFetch: Integer)
+
+@import helper._
+
+@main("Big Data Analysis - Web Crawler") {
+	<div class="bs-docs-header">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-8">
+					<h1>Web Crawler</h1>
+					<h4>By Group 3: Juliana Davila, Ricardo Calle y Valentina Grajales</h4>
+				</div>
+				<div class="col-xs-4">
+					<div class="pull-right">
+						<h5>Number of crawlers: @numberOfCrawlers</h5>
+						<h5>Max deep of crawling: @maxDepthOfCrawling</h5>
+						<h5>Delay: @politenessDelay ms</h5>
+						<h5>Max pages to fetch: @maxPagesToFetch</h5>
+						<h5>Running time: {{time | timer}}</h5>
+						<script type="text/javascript">
+							var rootURL = "@rootURL";
+							var numberOfCrawlers = @numberOfCrawlers;
+							var maxDepthOfCrawling = @maxDepthOfCrawling;
+							var politenessDelay = @politenessDelay;
+							var maxPagesToFetch = @maxPagesToFetch;
+						</script>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container bs-docs-container">
+		<!-- Nav tabs -->
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="#academicUnits" data-toggle="tab">Academic Units</a></li>
+			<li><a href="#teachers" data-toggle="tab">Teachers</a></li>
+		</ul>
+		<!-- Tab panes -->
+		<div class="tab-content">
+			<div class="tab-pane active" id="academicUnits">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12">
+						<div class="bs-docs-section">
+							<h1 class="page-header">Academic Units</h1>
+							<div class="bs-callout bs-callout-info" data-ng-repeat="academicUnit in academicUnits">
+								<h4 data-ng-bind="academicUnit.AcademicUnit"></h4>
+								<p>
+									<a ng-href="{{academicUnit.URL}}" target="_blank">{{academicUnit.URL}}</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="tab-pane active" id="teachers">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12">
+						<div class="bs-docs-section">
+							<h1 class="page-header">Teachers</h1>
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th>Department</th>
+										<th>Teacher name</th>
+										<th>Teacher email</th>
+										<th>Teacher extension</th>
+										<th>Teacher website</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr data-ng-repeat="teacher in teachers">
+										<td data-ng-bind="teacher.TeacherDepartment"></td>
+										<td data-ng-bind="teacher.TeacherName"></td>
+										<td data-ng-bind="teacher.TeacherEmail"></td>
+										<td data-ng-bind="teacher.TeacherExtension"></td>
+										<td>
+											<a ng-href="{{teacher.TeacherWebSite}}" target="_blank">{{teacher.TeacherWebSite}}</a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<script src="@routes.Assets.at("javascripts/app.js")"></script>
+	
+}

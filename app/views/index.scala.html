@@ -1,0 +1,65 @@
+@(message: String)
+
+@import helper._
+
+@main("Big Data Analysis - Web Crawler") {
+	<div class="bs-docs-header">
+		<div class="container">
+			<h1>Web Crawler</h1>
+			<h4>By Group 3: Juliana Davila, Ricardo Calle y Valentina Grajales</h4>
+		</div>
+	</div>
+
+	<div class="container bs-docs-container">
+		<form role="form" action="@routes.Application.crawlingZone()">
+			<div class="form-group">
+				<label for="rootURL">Root URL for crawling</label>
+				<input type="text" class="form-control" id="rootURL" name="rootURL" placeholder="Enter root url for crawling" value="http://www.uniandes.edu.co/institucional/facultades/listado-de-departamentos/">
+			</div>
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="form-group">
+						<label for="numberOfCrawlers">Number of crawlers (crawler threads)</label>
+						<select class="form-control" id="numberOfCrawlers" name="numberOfCrawlers">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="4">4</option>
+							<option value="8">8</option>
+							<option value="16">16</option>
+							<option value="32">32</option>
+							<option value="64">64</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="form-group">
+						<label for="maxDepthOfCrawling">Deep of crawling</label>
+						<input type="text" class="form-control" id="maxDepthOfCrawling" name="maxDepthOfCrawling" placeholder="Place deep of crawling" value="20">
+						<p class="help-block">put -1 for infinite deep.</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="form-group">
+						<label for="politenessDelay">Delay between request</label>
+						<input type="text" class="form-control" id="politenessDelay" name="politenessDelay" placeholder="Place delay between request" value="1000">
+						<p class="help-block">Value is in milliseconds.</p>
+					</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="form-group">
+						<label for="maxPagesToFetch">Max pages to fetch</label>
+						<input type="text" class="form-control" id="maxPagesToFetch" name="maxPagesToFetch" placeholder="How many pages to fetch" value="1000">
+					</div>
+				</div>
+			</div>
+			<button type="submit" class="btn btn-default">Start</button>
+		</form>
+		@*message
+		<strong>Stats</strong><br>
+		<div id="ping"></div>
+		<script type="text/javascript" charset="utf-8" src="@routes.Application.pingJs()"></script>*@
+	</div>
+
+}
